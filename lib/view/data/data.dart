@@ -7,10 +7,10 @@ List shorts = [
 ];
 
 List shortscaption = [
-  "dfndsfj",
-  "fndfjkdmfkdsfl",
-  "dsfmdsk",
-  "dfmsmfksdf",
+  "It is never too late to be what you might have been",
+  "The only way to do great work is to love what you do",
+  "The only thing we have to fear is fear itself",
+  "You miss 100% of the shots you don’t take",
 ];
 
 class videodata {
@@ -91,5 +91,3 @@ class videolist {
     },
   ];
 }
-
-

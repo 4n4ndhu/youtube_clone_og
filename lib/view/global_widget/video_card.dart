@@ -49,7 +49,7 @@ class videoCard extends StatelessWidget {
               Text(views, style: TextStyle(color: ColorConstants.lightwhite))
             ],
           ),
-          trailing: Icon(Icons.more_vert),
+          trailing: InkWell(onTap: () {}, child: Icon(Icons.more_vert)),
         ),
       ],
     );
