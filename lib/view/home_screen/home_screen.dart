@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 8,
+        length: 6,
         initialIndex: 1,
         child: Scaffold(
           backgroundColor: ColorConstants.primaryblack,
@@ -20,71 +20,240 @@ class HomeScreen extends StatelessWidget {
             Container(
               color: ColorConstants.primaryblack,
             ),
-            SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image.asset(
-                      height: 50, "assets/images/shorts1-removebg-preview.png"),
-                  SizedBox(height: 10),
-                  gridview(),
-                  SizedBox(height: 40),
-                  ListView.builder(
-                      itemCount: videolist.videoCardList.length,
-                      physics: NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) => InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => VideoScreen(
-                                        videoUrl: videolist.videoCardList[index]
-                                            ["videoUrl"],
-                                        caption: videolist.videoCardList[index]
-                                            ["caption"],
-                                        details: videolist.videoCardList[index]
-                                            ["details"],
-                                        imageUrl: videolist.videoCardList[index]
-                                            ["dpImage"],
-                                        channelName: videolist
-                                            .videoCardList[index]["Name"],
-                                        subCount: videolist.videoCardList[index]
-                                            ["subcount"]),
-                                  ));
-                            },
-                            child: videoCard(
-                              thumbnail: videodata.videos[index]["thumbnail"],
-                              views: videodata.videos[index]["views"],
-                              caption: videodata.videos[index]["caption"],
-                              channelname: videodata.videos[index]
-                                  ["channelName"],
-                              dpUrl: videodata.videos[index]["dp"],
-                            ),
-                          ))
-                ],
-              ),
-            ),
-            Container(
-              color: Colors.red,
-            ),
-            Container(
-              color: Colors.yellow,
-            ),
-            Container(
-              color: Colors.blue,
-            ),
-            Container(
-              color: Colors.green,
-            ),
-            Container(
-              color: Colors.grey,
-            ),
-            Container(
-              color: Colors.orange,
-            ),
+            _AllSection(),
+            _TrendingSection(),
+            _GamingSection(),
+            _MusicSection(),
+            _FoodSection(),
           ]),
         ));
+  }
+
+  SingleChildScrollView _FoodSection() {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.only(top: 15),
+        child: Column(children: [
+          ListView.separated(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemBuilder: (context, index) => videoCardWidget(
+                    thumbnail: trendingCardData.trendingVideoCardData[index]
+                        ["thumbnail"],
+                    caption: trendingCardData.trendingVideoCardData[index]
+                        ["caption"],
+                    dpUrl: trendingCardData.trendingVideoCardData[index]["dp"],
+                    channelname: trendingCardData.trendingVideoCardData[index]
+                        ["channelName"],
+                    views: trendingCardData.trendingVideoCardData[index]
+                        ["views"],
+                    onCardTaped: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => VideoScreen(
+                                videoUrl: trendingVideo.trendingVideoData[index]
+                                    ["videoUrl"],
+                                caption: trendingVideo.trendingVideoData[index]
+                                    ["caption"],
+                                details: trendingVideo.trendingVideoData[index]
+                                    ["details"],
+                                DpimageUrl: trendingVideo
+                                    .trendingVideoData[index]["dpImage"],
+                                channelName: trendingVideo
+                                    .trendingVideoData[index]["Name"],
+                                subCount: trendingVideo.trendingVideoData[index]
+                                    ["subcount"]),
+                          ));
+                    },
+                  ),
+              separatorBuilder: (context, index) => SizedBox(
+                    height: 20,
+                  ),
+              itemCount: trendingCardData.trendingVideoCardData.length)
+        ]),
+      ),
+    );
+  }
+
+  SingleChildScrollView _MusicSection() {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.only(top: 15),
+        child: Column(children: [
+          ListView.separated(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemBuilder: (context, index) => videoCardWidget(
+                    thumbnail: trendingCardData.trendingVideoCardData[index]
+                        ["thumbnail"],
+                    caption: trendingCardData.trendingVideoCardData[index]
+                        ["caption"],
+                    dpUrl: trendingCardData.trendingVideoCardData[index]["dp"],
+                    channelname: trendingCardData.trendingVideoCardData[index]
+                        ["channelName"],
+                    views: trendingCardData.trendingVideoCardData[index]
+                        ["views"],
+                    onCardTaped: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => VideoScreen(
+                                videoUrl: trendingVideo.trendingVideoData[index]
+                                    ["videoUrl"],
+                                caption: trendingVideo.trendingVideoData[index]
+                                    ["caption"],
+                                details: trendingVideo.trendingVideoData[index]
+                                    ["details"],
+                                DpimageUrl: trendingVideo
+                                    .trendingVideoData[index]["dpImage"],
+                                channelName: trendingVideo
+                                    .trendingVideoData[index]["Name"],
+                                subCount: trendingVideo.trendingVideoData[index]
+                                    ["subcount"]),
+                          ));
+                    },
+                  ),
+              separatorBuilder: (context, index) => SizedBox(
+                    height: 20,
+                  ),
+              itemCount: trendingCardData.trendingVideoCardData.length)
+        ]),
+      ),
+    );
+  }
+
+  SingleChildScrollView _GamingSection() {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.only(top: 15),
+        child: Column(children: [
+          ListView.separated(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemBuilder: (context, index) => videoCardWidget(
+                    thumbnail: gamingCardData.gamingVideoCardData[index]
+                        ["thumbnail"],
+                    caption: gamingCardData.gamingVideoCardData[index]
+                        ["caption"],
+                    dpUrl: gamingCardData.gamingVideoCardData[index]["dp"],
+                    channelname: gamingCardData.gamingVideoCardData[index]
+                        ["channelName"],
+                    views: gamingCardData.gamingVideoCardData[index]["views"],
+                    onCardTaped: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => VideoScreen(
+                                videoUrl: gamingVideo.gamingVideoData[index]
+                                    ["videoUrl"],
+                                caption: gamingVideo.gamingVideoData[index]
+                                    ["caption"],
+                                details: gamingVideo.gamingVideoData[index]
+                                    ["details"],
+                                DpimageUrl: gamingVideo.gamingVideoData[index]
+                                    ["dpImage"],
+                                channelName: gamingVideo.gamingVideoData[index]
+                                    ["Name"],
+                                subCount: gamingVideo.gamingVideoData[index]
+                                    ["subcount"]),
+                          ));
+                    },
+                  ),
+              separatorBuilder: (context, index) => SizedBox(
+                    height: 20,
+                  ),
+              itemCount: gamingCardData.gamingVideoCardData.length)
+        ]),
+      ),
+    );
+  }
+
+  SingleChildScrollView _TrendingSection() {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.only(top: 15),
+        child: Column(children: [
+          ListView.separated(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemBuilder: (context, index) => videoCardWidget(
+                    thumbnail: trendingCardData.trendingVideoCardData[index]
+                        ["thumbnail"],
+                    caption: trendingCardData.trendingVideoCardData[index]
+                        ["caption"],
+                    dpUrl: trendingCardData.trendingVideoCardData[index]["dp"],
+                    channelname: trendingCardData.trendingVideoCardData[index]
+                        ["channelName"],
+                    views: trendingCardData.trendingVideoCardData[index]
+                        ["views"],
+                    onCardTaped: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => VideoScreen(
+                                videoUrl: trendingVideo.trendingVideoData[index]
+                                    ["videoUrl"],
+                                caption: trendingVideo.trendingVideoData[index]
+                                    ["caption"],
+                                details: trendingVideo.trendingVideoData[index]
+                                    ["details"],
+                                DpimageUrl: trendingVideo
+                                    .trendingVideoData[index]["dpImage"],
+                                channelName: trendingVideo
+                                    .trendingVideoData[index]["Name"],
+                                subCount: trendingVideo.trendingVideoData[index]
+                                    ["subcount"]),
+                          ));
+                    },
+                  ),
+              separatorBuilder: (context, index) => SizedBox(
+                    height: 20,
+                  ),
+              itemCount: trendingCardData.trendingVideoCardData.length)
+        ]),
+      ),
+    );
+  }
+
+  SingleChildScrollView _AllSection() {
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Image.asset(height: 50, "assets/images/shorts1-removebg-preview.png"),
+          SizedBox(height: 10),
+          gridview(),
+          SizedBox(height: 40),
+          ListView.builder(
+            itemCount: AllvideoData.allvideodata.length,
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemBuilder: (context, index) => videoCardWidget(
+              thumbnail: AllCardData.allvideocarddata[index]["thumbnail"],
+              views: AllCardData.allvideocarddata[index]["views"],
+              caption: AllCardData.allvideocarddata[index]["caption"],
+              channelname: AllCardData.allvideocarddata[index]["channelName"],
+              dpUrl: AllCardData.allvideocarddata[index]["dp"],
+              onCardTaped: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => VideoScreen(
+                        videoUrl: AllvideoData.allvideodata[index]["videoUrl"],
+                        caption: AllvideoData.allvideodata[index]["caption"],
+                        details: AllvideoData.allvideodata[index]["details"],
+                        DpimageUrl: AllvideoData.allvideodata[index]["dpImage"],
+                        channelName: AllvideoData.allvideodata[index]["Name"],
+                        subCount: AllvideoData.allvideodata[index]["subcount"],
+                      ),
+                    ));
+              },
+            ),
+          )
+        ],
+      ),
+    );
   }
 
   AppBar _appBar_tabBar() {
@@ -114,54 +283,26 @@ class HomeScreen extends StatelessWidget {
               icon: Icon(Icons.explore_outlined),
             ),
             Tab(
-              child: Container(
-                child: Text(
-                  "All",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-                ),
+              child: Text(
+                "All",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
               ),
             ),
             Tab(
-              child: Container(
-                child: Text("Trending",
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-              ),
+              child: Text("Trending",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
             ),
             Tab(
-              child: Container(
-                child: Text("New to you",
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-              ),
+              child: Text("Gaming",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
             ),
             Tab(
-              child: Container(
-                child: Text("Gaming",
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-              ),
+              child: Text("Music",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
             ),
             Tab(
-              child: Container(
-                child: Text("Music",
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-              ),
-            ),
-            Tab(
-              child: Container(
-                child: Text("Food",
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-              ),
-            ),
-            Tab(
-              child: Container(
-                child: Text("Movies",
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-              ),
+              child: Text("Food",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
             ),
           ]),
       backgroundColor: ColorConstants.primaryblack,

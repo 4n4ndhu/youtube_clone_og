@@ -6,7 +6,7 @@ class VideoScreen extends StatefulWidget {
   final String videoUrl;
   final String caption;
   final String details;
-  final String imageUrl;
+  final String DpimageUrl;
   final String channelName;
   final String subCount;
 
@@ -14,7 +14,7 @@ class VideoScreen extends StatefulWidget {
       {required this.videoUrl,
       required this.caption,
       required this.details,
-      required this.imageUrl,
+      required this.DpimageUrl,
       required this.channelName,
       required this.subCount});
 
@@ -83,7 +83,7 @@ class _VideoPageState extends State<VideoScreen> {
                   children: [
                     CircleAvatar(
                         radius: 25,
-                        backgroundImage: AssetImage(widget.imageUrl)),
+                        backgroundImage: AssetImage(widget.DpimageUrl)),
                     SizedBox(
                       width: 20,
                     ),

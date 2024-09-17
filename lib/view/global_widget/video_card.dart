@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone_og/view/utils/constants/color_constatns.dart';
 
-class videoCard extends StatelessWidget {
+class videoCardWidget extends StatelessWidget {
   String thumbnail = "";
   String dpUrl = "";
   String channelname = "";
   String views = "";
   String caption = "";
+  void Function()? onCardTaped;
 
-  videoCard({
+  videoCardWidget({
+    required this.onCardTaped,
     required this.thumbnail,
     required this.caption,
     required this.dpUrl,
@@ -18,40 +20,43 @@ class videoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-            child: Image.asset(
-              thumbnail,
-              fit: BoxFit.fitWidth,
+    return InkWell(
+      onTap: onCardTaped,
+      child: Column(
+        children: [
+          Container(
+              child: Image.asset(
+                thumbnail,
+                fit: BoxFit.cover,
+              ),
+              height: 200,
+              width: double.infinity,
+              color: ColorConstants.primarywhite),
+          SizedBox(
+            height: 10,
+          ),
+          ListTile(
+            titleAlignment: ListTileTitleAlignment.top,
+            leading: CircleAvatar(
+              backgroundImage: AssetImage(dpUrl),
             ),
-            height: 200,
-            width: double.infinity,
-            color: ColorConstants.primarywhite),
-        SizedBox(
-          height: 10,
-        ),
-        ListTile(
-          titleAlignment: ListTileTitleAlignment.top,
-          leading: CircleAvatar(
-            backgroundImage: AssetImage(dpUrl),
+            title: Text(
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              caption,
+              style: TextStyle(color: Colors.white),
+            ),
+            subtitle: Wrap(
+              children: [
+                Text(channelname,
+                    style: TextStyle(color: ColorConstants.lightwhite)),
+                Text(views, style: TextStyle(color: ColorConstants.lightwhite))
+              ],
+            ),
+            trailing: InkWell(onTap: () {}, child: Icon(Icons.more_vert)),
           ),
-          title: Text(
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            caption,
-            style: TextStyle(color: Colors.white),
-          ),
-          subtitle: Wrap(
-            children: [
-              Text(channelname,
-                  style: TextStyle(color: ColorConstants.lightwhite)),
-              Text(views, style: TextStyle(color: ColorConstants.lightwhite))
-            ],
-          ),
-          trailing: InkWell(onTap: () {}, child: Icon(Icons.more_vert)),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
