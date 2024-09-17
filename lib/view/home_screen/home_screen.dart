@@ -38,31 +38,29 @@ class HomeScreen extends StatelessWidget {
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemBuilder: (context, index) => videoCardWidget(
-                    thumbnail: trendingCardData.trendingVideoCardData[index]
+                    thumbnail: FoodCardData.foodVideoCardData[index]
                         ["thumbnail"],
-                    caption: trendingCardData.trendingVideoCardData[index]
-                        ["caption"],
-                    dpUrl: trendingCardData.trendingVideoCardData[index]["dp"],
-                    channelname: trendingCardData.trendingVideoCardData[index]
+                    caption: FoodCardData.foodVideoCardData[index]["caption"],
+                    dpUrl: FoodCardData.foodVideoCardData[index]["dp"],
+                    channelname: FoodCardData.foodVideoCardData[index]
                         ["channelName"],
-                    views: trendingCardData.trendingVideoCardData[index]
-                        ["views"],
+                    views: FoodCardData.foodVideoCardData[index]["views"],
                     onCardTaped: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => VideoScreen(
-                                videoUrl: trendingVideo.trendingVideoData[index]
+                                videoUrl: FoodVideo.foodVideoData[index]
                                     ["videoUrl"],
-                                caption: trendingVideo.trendingVideoData[index]
+                                caption: FoodVideo.foodVideoData[index]
                                     ["caption"],
-                                details: trendingVideo.trendingVideoData[index]
+                                details: FoodVideo.foodVideoData[index]
                                     ["details"],
-                                DpimageUrl: trendingVideo
-                                    .trendingVideoData[index]["dpImage"],
-                                channelName: trendingVideo
-                                    .trendingVideoData[index]["Name"],
-                                subCount: trendingVideo.trendingVideoData[index]
+                                DpimageUrl: FoodVideo.foodVideoData[index]
+                                    ["dpImage"],
+                                channelName: FoodVideo.foodVideoData[index]
+                                    ["Name"],
+                                subCount: FoodVideo.foodVideoData[index]
                                     ["subcount"]),
                           ));
                     },
@@ -70,7 +68,7 @@ class HomeScreen extends StatelessWidget {
               separatorBuilder: (context, index) => SizedBox(
                     height: 20,
                   ),
-              itemCount: trendingCardData.trendingVideoCardData.length)
+              itemCount: FoodCardData.foodVideoCardData.length)
         ]),
       ),
     );
@@ -85,31 +83,29 @@ class HomeScreen extends StatelessWidget {
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemBuilder: (context, index) => videoCardWidget(
-                    thumbnail: trendingCardData.trendingVideoCardData[index]
+                    thumbnail: MusicCardData.musicVideoCardData[index]
                         ["thumbnail"],
-                    caption: trendingCardData.trendingVideoCardData[index]
-                        ["caption"],
-                    dpUrl: trendingCardData.trendingVideoCardData[index]["dp"],
-                    channelname: trendingCardData.trendingVideoCardData[index]
+                    caption: MusicCardData.musicVideoCardData[index]["caption"],
+                    dpUrl: MusicCardData.musicVideoCardData[index]["dp"],
+                    channelname: MusicCardData.musicVideoCardData[index]
                         ["channelName"],
-                    views: trendingCardData.trendingVideoCardData[index]
-                        ["views"],
+                    views: MusicCardData.musicVideoCardData[index]["views"],
                     onCardTaped: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => VideoScreen(
-                                videoUrl: trendingVideo.trendingVideoData[index]
+                                videoUrl: MusicVideo.musicVideoData[index]
                                     ["videoUrl"],
-                                caption: trendingVideo.trendingVideoData[index]
+                                caption: MusicVideo.musicVideoData[index]
                                     ["caption"],
-                                details: trendingVideo.trendingVideoData[index]
+                                details: MusicVideo.musicVideoData[index]
                                     ["details"],
-                                DpimageUrl: trendingVideo
-                                    .trendingVideoData[index]["dpImage"],
-                                channelName: trendingVideo
-                                    .trendingVideoData[index]["Name"],
-                                subCount: trendingVideo.trendingVideoData[index]
+                                DpimageUrl: MusicVideo.musicVideoData[index]
+                                    ["dpImage"],
+                                channelName: MusicVideo.musicVideoData[index]
+                                    ["Name"],
+                                subCount: MusicVideo.musicVideoData[index]
                                     ["subcount"]),
                           ));
                     },
@@ -117,7 +113,7 @@ class HomeScreen extends StatelessWidget {
               separatorBuilder: (context, index) => SizedBox(
                     height: 20,
                   ),
-              itemCount: trendingCardData.trendingVideoCardData.length)
+              itemCount: MusicCardData.musicVideoCardData.length)
         ]),
       ),
     );
@@ -132,30 +128,30 @@ class HomeScreen extends StatelessWidget {
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemBuilder: (context, index) => videoCardWidget(
-                    thumbnail: gamingCardData.gamingVideoCardData[index]
+                    thumbnail: GamingCardData.gamingVideoCardData[index]
                         ["thumbnail"],
-                    caption: gamingCardData.gamingVideoCardData[index]
+                    caption: GamingCardData.gamingVideoCardData[index]
                         ["caption"],
-                    dpUrl: gamingCardData.gamingVideoCardData[index]["dp"],
-                    channelname: gamingCardData.gamingVideoCardData[index]
+                    dpUrl: GamingCardData.gamingVideoCardData[index]["dp"],
+                    channelname: GamingCardData.gamingVideoCardData[index]
                         ["channelName"],
-                    views: gamingCardData.gamingVideoCardData[index]["views"],
+                    views: GamingCardData.gamingVideoCardData[index]["views"],
                     onCardTaped: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => VideoScreen(
-                                videoUrl: gamingVideo.gamingVideoData[index]
+                                videoUrl: GamingVideo.gamingVideoData[index]
                                     ["videoUrl"],
-                                caption: gamingVideo.gamingVideoData[index]
+                                caption: GamingVideo.gamingVideoData[index]
                                     ["caption"],
-                                details: gamingVideo.gamingVideoData[index]
+                                details: GamingVideo.gamingVideoData[index]
                                     ["details"],
-                                DpimageUrl: gamingVideo.gamingVideoData[index]
+                                DpimageUrl: GamingVideo.gamingVideoData[index]
                                     ["dpImage"],
-                                channelName: gamingVideo.gamingVideoData[index]
+                                channelName: GamingVideo.gamingVideoData[index]
                                     ["Name"],
-                                subCount: gamingVideo.gamingVideoData[index]
+                                subCount: GamingVideo.gamingVideoData[index]
                                     ["subcount"]),
                           ));
                     },
@@ -163,7 +159,7 @@ class HomeScreen extends StatelessWidget {
               separatorBuilder: (context, index) => SizedBox(
                     height: 20,
                   ),
-              itemCount: gamingCardData.gamingVideoCardData.length)
+              itemCount: GamingCardData.gamingVideoCardData.length)
         ]),
       ),
     );
@@ -178,31 +174,31 @@ class HomeScreen extends StatelessWidget {
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemBuilder: (context, index) => videoCardWidget(
-                    thumbnail: trendingCardData.trendingVideoCardData[index]
+                    thumbnail: TrendingCardData.trendingVideoCardData[index]
                         ["thumbnail"],
-                    caption: trendingCardData.trendingVideoCardData[index]
+                    caption: TrendingCardData.trendingVideoCardData[index]
                         ["caption"],
-                    dpUrl: trendingCardData.trendingVideoCardData[index]["dp"],
-                    channelname: trendingCardData.trendingVideoCardData[index]
+                    dpUrl: TrendingCardData.trendingVideoCardData[index]["dp"],
+                    channelname: TrendingCardData.trendingVideoCardData[index]
                         ["channelName"],
-                    views: trendingCardData.trendingVideoCardData[index]
+                    views: TrendingCardData.trendingVideoCardData[index]
                         ["views"],
                     onCardTaped: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => VideoScreen(
-                                videoUrl: trendingVideo.trendingVideoData[index]
+                                videoUrl: TrendingVideo.trendingVideoData[index]
                                     ["videoUrl"],
-                                caption: trendingVideo.trendingVideoData[index]
+                                caption: TrendingVideo.trendingVideoData[index]
                                     ["caption"],
-                                details: trendingVideo.trendingVideoData[index]
+                                details: TrendingVideo.trendingVideoData[index]
                                     ["details"],
-                                DpimageUrl: trendingVideo
+                                DpimageUrl: TrendingVideo
                                     .trendingVideoData[index]["dpImage"],
-                                channelName: trendingVideo
+                                channelName: TrendingVideo
                                     .trendingVideoData[index]["Name"],
-                                subCount: trendingVideo.trendingVideoData[index]
+                                subCount: TrendingVideo.trendingVideoData[index]
                                     ["subcount"]),
                           ));
                     },
@@ -210,7 +206,7 @@ class HomeScreen extends StatelessWidget {
               separatorBuilder: (context, index) => SizedBox(
                     height: 20,
                   ),
-              itemCount: trendingCardData.trendingVideoCardData.length)
+              itemCount: TrendingCardData.trendingVideoCardData.length)
         ]),
       ),
     );
