@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone_og/view/home_screen/home_screen.dart';
+import 'package:youtube_clone_og/view/shorts_screen/shorts_screen.dart';
 import 'package:youtube_clone_og/view/utils/constants/color_constatns.dart';
 
 class BottomNavScreen extends StatefulWidget {
@@ -12,9 +13,7 @@ class BottomNavScreen extends StatefulWidget {
 class _BottomNavScreenState extends State<BottomNavScreen> {
   List screens = [
     HomeScreen(),
-    Container(
-      color: Colors.yellow,
-    ),
+    ShortsScreen(),
     Container(
       color: Colors.blue,
     ),

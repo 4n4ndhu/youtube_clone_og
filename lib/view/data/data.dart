@@ -316,3 +316,43 @@ class FoodVideo {
     },
   ];
 }
+
+class ShortsscreenData {
+  static List shortsScreenData = [
+    {
+      "dpImage": "assets/images/minecraftdp.jpg",
+      "channelName": "@MineCraft",
+      "audioImage": "assets/images/minecraftdp.jpg",
+      "caption": "DeadPool viral dancing",
+      "bgVid": "assets/images/gif5.gif"
+    },
+    {
+      "dpImage": "assets/images/Anuv Jain-High (800x800).jpg",
+      "channelName": "@Anuv Jain",
+      "audioImage": "assets/images/Anuv Jain-High (800x800).jpg",
+      "caption": "Groot Dancing",
+      "bgVid": "assets/images/gif3.gif"
+    },
+    {
+      "dpImage": "assets/images/wokongdp.jpg",
+      "channelName": "@PlayStation",
+      "audioImage": "assets/images/wokongdp.jpg",
+      "caption": "Iorn Man ",
+      "bgVid": "assets/images/gif4.gif"
+    },
+    {
+      "dpImage": "assets/images/sonydp.jpg",
+      "channelName": "@Sony",
+      "audioImage": "assets/images/sonydp.jpg",
+      "caption": "The path you see is not the only one existing",
+      "bgVid": "assets/images/gif2.gif"
+    },
+    {
+      "dpImage": "assets/images/pubgdp.jpg",
+      "channelName": "@PUBG MOBILE",
+      "audioImage": "assets/images/pubgdp.jpg",
+      "caption": "Animated nature gif",
+      "bgVid": "assets/images/gif1.gif"
+    },
+  ];
+}
