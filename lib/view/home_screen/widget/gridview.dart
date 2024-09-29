@@ -26,6 +26,7 @@ class gridview extends StatelessWidget {
               Align(
                 alignment: Alignment.topRight,
                 child: IconButton(
+                    color: ColorConstants.primarywhite,
                     onPressed: () {
                       showModalBottomSheet(
                         backgroundColor: ColorConstants.primaryblack,

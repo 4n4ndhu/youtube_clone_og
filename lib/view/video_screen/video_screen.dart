@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_clone_og/view/utils/constants/color_constatns.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
@@ -167,7 +168,7 @@ class _VideoPageState extends State<VideoScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.share_outlined,
+                                  CupertinoIcons.arrowshape_turn_up_right,
                                   color: ColorConstants.lightwhite,
                                 ),
                                 SizedBox(

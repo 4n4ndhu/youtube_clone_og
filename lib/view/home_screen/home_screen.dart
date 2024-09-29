@@ -45,6 +45,7 @@ class HomeScreen extends StatelessWidget {
                     channelname: FoodCardData.foodVideoCardData[index]
                         ["channelName"],
                     views: FoodCardData.foodVideoCardData[index]["views"],
+                    duration: FoodCardData.foodVideoCardData[index]["duration"],
                     onCardTaped: () {
                       Navigator.push(
                           context,
@@ -90,6 +91,8 @@ class HomeScreen extends StatelessWidget {
                     channelname: MusicCardData.musicVideoCardData[index]
                         ["channelName"],
                     views: MusicCardData.musicVideoCardData[index]["views"],
+                    duration: MusicCardData.musicVideoCardData[index]
+                        ["duration"],
                     onCardTaped: () {
                       Navigator.push(
                           context,
@@ -136,6 +139,8 @@ class HomeScreen extends StatelessWidget {
                     channelname: GamingCardData.gamingVideoCardData[index]
                         ["channelName"],
                     views: GamingCardData.gamingVideoCardData[index]["views"],
+                    duration: GamingCardData.gamingVideoCardData[index]
+                        ["duration"],
                     onCardTaped: () {
                       Navigator.push(
                           context,
@@ -183,6 +188,8 @@ class HomeScreen extends StatelessWidget {
                         ["channelName"],
                     views: TrendingCardData.trendingVideoCardData[index]
                         ["views"],
+                    duration: TrendingCardData.trendingVideoCardData[index]
+                        ["duration"],
                     onCardTaped: () {
                       Navigator.push(
                           context,
@@ -221,7 +228,10 @@ class HomeScreen extends StatelessWidget {
           SizedBox(height: 10),
           gridview(),
           SizedBox(height: 40),
-          ListView.builder(
+          ListView.separated(
+            separatorBuilder: (context, index) => SizedBox(
+              height: 20,
+            ),
             itemCount: AllvideoData.allvideodata.length,
             physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
@@ -231,6 +241,7 @@ class HomeScreen extends StatelessWidget {
               caption: AllCardData.allvideocarddata[index]["caption"],
               channelname: AllCardData.allvideocarddata[index]["channelName"],
               dpUrl: AllCardData.allvideocarddata[index]["dp"],
+              duration: AllCardData.allvideocarddata[index]["duration"],
               onCardTaped: () {
                 Navigator.push(
                     context,

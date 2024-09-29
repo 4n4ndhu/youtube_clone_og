@@ -20,7 +20,8 @@ class AllCardData {
       "dp": "assets/images/minecraftdp.jpg",
       "channelName": "Minecraft ∙",
       "caption": "Minecraft Trails & Tales Update: Official Launch Trailer",
-      "views": "6M views ∙ 1 years ago"
+      "views": "6M views ∙ 1 years ago",
+      "duration": "1:58"
     },
     {
       "thumbnail": "assets/images/husn.jpg",
@@ -28,6 +29,7 @@ class AllCardData {
       "channelName": "Anuv Jain ∙",
       "caption": "Anuv Jain - HUSN (Official Video)",
       "views": " 30M views ∙ 8 month ago",
+      "duration": "4:00"
     },
     {
       "thumbnail": "assets/images/cookedthumb.jpg",
@@ -36,6 +38,7 @@ class AllCardData {
       "caption":
           "Spicy Garlic Chicken | Chicken Starters Recipe | Chicken Recipes | Cookd",
       "views": " 4.6M views ∙ 10 month ago",
+      "duration": "2:06"
     },
     {
       "thumbnail": "assets/images/big dawgs.jpg",
@@ -44,6 +47,7 @@ class AllCardData {
       "caption":
           "Hanumankind – Big Dawgs | Ft. Kalmi (Official Music Video) | Def Jam India",
       "views": " 80M views ∙ 1 month ago",
+      "duration": "3:55"
     },
   ];
 }
@@ -94,7 +98,8 @@ class TrendingCardData {
       "dp": "assets/images/karikudp.jpg",
       "channelName": "Karikku ∙",
       "caption": "JAM | Part 1 | Karikku | Comedy",
-      "views": "2.9M views ∙ 2 days ago"
+      "views": "2.9M views ∙ 2 days ago",
+      "duration": "12:31"
     },
     {
       "thumbnail": "assets/images/sonythumb.jpg",
@@ -102,14 +107,16 @@ class TrendingCardData {
       "channelName": "Sony Music South ∙",
       "caption":
           "Vettaiyan - Manasilaayo Lyric | Rajinikanth | T.J. Gnanavel | Anirudh | Manju Warrier | Subaskaran",
-      "views": "18M views ∙ 7 days ago"
+      "views": "18M views ∙ 7 days ago",
+      "duration": "4:06"
     },
     {
       "thumbnail": "assets/images/alambanzthub.jpg",
       "dp": "assets/images/alambanzdp.jpg",
       "channelName": "Alambanz ∙",
       "caption": "Maveli & Boys | Onam Comedy | Alambanz",
-      "views": "368K views ∙ 2 days ago"
+      "views": "368K views ∙ 2 days ago",
+      "duration": "45:15"
     },
   ];
 }
@@ -151,21 +158,24 @@ class GamingCardData {
       "dp": "assets/images/wokongdp.jpg",
       "channelName": "PlayStation ∙",
       "caption": "Black Myth: Wukong - Final Trailer | PS5 Games",
-      "views": "4M views ∙ 1 month ago"
+      "views": "4M views ∙ 1 month ago",
+      "duration": "4:51"
     },
     {
       "thumbnail": "assets/images/pubgthumb.jpg",
       "dp": "assets/images/pubgdp.jpg",
       "channelName": "PUBG MOBILE ∙",
       "caption": "PUBG MOBILE Global Launch Trailer",
-      "views": "19M views ∙ 6 years ago"
+      "views": "19M views ∙ 6 years ago",
+      "duration": "0:47"
     },
     {
       "thumbnail": "assets/images/minecraft thumb.jpg",
       "dp": "assets/images/minecraftdp.jpg",
       "channelName": "Minecraft ∙",
       "caption": "Minecraft Trails & Tales Update: Official Launch Trailer",
-      "views": "6M views ∙ 1 years ago"
+      "views": "6M views ∙ 1 years ago",
+      "duration": "1:58"
     },
   ];
 }
@@ -207,6 +217,7 @@ class MusicCardData {
       "channelName": "Anuv Jain ∙",
       "caption": "Anuv Jain - HUSN (Official Video)",
       "views": " 30M views ∙ 8 month ago",
+      "duration": "4:00"
     },
     {
       "thumbnail": "assets/images/sonythumb.jpg",
@@ -214,7 +225,8 @@ class MusicCardData {
       "channelName": "Sony Music South ∙",
       "caption":
           "Vettaiyan - Manasilaayo Lyric | Rajinikanth | T.J. Gnanavel | Anirudh | Manju Warrier | Subaskaran",
-      "views": "18M views ∙ 7 days ago"
+      "views": "18M views ∙ 7 days ago",
+      "duration": "4:06"
     },
     {
       "thumbnail": "assets/images/big dawgs.jpg",
@@ -223,6 +235,7 @@ class MusicCardData {
       "caption":
           "Hanumankind – Big Dawgs | Ft. Kalmi (Official Music Video) | Def Jam India",
       "views": " 80M views ∙ 1 month ago",
+      "duration": "3:55"
     },
   ];
 }
@@ -267,13 +280,15 @@ class FoodCardData {
       "caption":
           "Spicy Garlic Chicken | Chicken Starters Recipe | Chicken Recipes | Cookd",
       "views": " 4.6M views ∙ 10 month ago",
+      "duration": "2:06"
     },
     {
       "thumbnail": "assets/images/eatthumb.jpg",
       "dp": "assets/images/eatdp.jpg",
       "channelName": "Eat ∙",
       "caption": "One Potato & One Egg! Quick Recipe Perfect For Breakfast",
-      "views": "18M views ∙ 7 days ago"
+      "views": "18M views ∙ 7 days ago",
+      "duration": "5:51"
     },
     {
       "thumbnail": "assets/images/hikaruthumb.jpg",
@@ -282,6 +297,7 @@ class FoodCardData {
       "caption":
           "Perfect Crispy Garlic Cheese Potatoes!! Delicious! Cheese sauce. NO Fry.",
       "views": " 20M views ∙ 1 year ago",
+      "duration": "5:27"
     },
   ];
 }
