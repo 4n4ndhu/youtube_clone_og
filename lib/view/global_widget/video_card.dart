@@ -78,166 +78,163 @@ class videoCardWidget extends StatelessWidget {
                 Text(views, style: TextStyle(color: ColorConstants.lightwhite))
               ],
             ),
-            trailing: InkWell(
-                onTap: () {
-                  showModalBottomSheet(
-                    backgroundColor: ColorConstants.primaryblack,
-                    context: context,
-                    builder: (context) => Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          SizedBox(
-                            height: 25,
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.schedule,
-                                color: ColorConstants.primarywhite,
-                                size: 25,
-                              ),
-                              SizedBox(
-                                width: 30,
-                              ),
-                              Text(
-                                "Save to Watch later",
-                                style: TextStyle(
-                                    fontSize: 17, color: Colors.white),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 25,
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.bookmark_outline_sharp,
-                                color: ColorConstants.primarywhite,
-                                size: 25,
-                              ),
-                              SizedBox(
-                                width: 30,
-                              ),
-                              Text("Save to playlist",
-                                  style: TextStyle(
-                                      fontSize: 17,
-                                      color: ColorConstants.primarywhite))
-                            ],
-                          ),
-                          SizedBox(
-                            height: 25,
-                          ),
-                          Row(
-                            children: [
-                              Icon(Icons.download_outlined,
-                                  color: ColorConstants.primarywhite, size: 25),
-                              SizedBox(
-                                width: 30,
-                              ),
-                              Text("Download video",
-                                  style: TextStyle(
-                                      fontSize: 17, color: Colors.white))
-                            ],
-                          ),
-                          SizedBox(
-                            height: 25,
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                CupertinoIcons.arrowshape_turn_up_right,
-                                color: ColorConstants.primarywhite,
-                                size: 25,
-                              ),
-                              SizedBox(
-                                width: 30,
-                              ),
-                              Text(
-                                "Share",
-                                style: TextStyle(
-                                    fontSize: 17, color: Colors.white),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 25,
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.not_interested,
-                                color: ColorConstants.primarywhite,
-                                size: 25,
-                              ),
-                              SizedBox(
-                                width: 30,
-                              ),
-                              Text(
-                                "Not interested",
-                                style: TextStyle(
-                                    fontSize: 17, color: Colors.white),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 25,
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.no_accounts_outlined,
-                                color: ColorConstants.primarywhite,
-                                size: 25,
-                              ),
-                              SizedBox(
-                                width: 30,
-                              ),
-                              Text(
-                                "Don't recommend channel",
-                                style: TextStyle(
-                                    fontSize: 17, color: Colors.white),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 25,
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.flag_outlined,
-                                color: ColorConstants.primarywhite,
-                                size: 25,
-                              ),
-                              SizedBox(
-                                width: 30,
-                              ),
-                              Text(
-                                "Report",
-                                style: TextStyle(
-                                    fontSize: 17, color: Colors.white),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 25,
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-                child: Icon(
-                  Icons.more_vert,
-                  color: ColorConstants.primarywhite,
-                )),
+            trailing: _buildBottomSheetSection(context),
           ),
         ],
       ),
     );
+  }
+
+  InkWell _buildBottomSheetSection(BuildContext context) {
+    return InkWell(
+        onTap: () {
+          showModalBottomSheet(
+            backgroundColor: ColorConstants.primaryblack,
+            context: context,
+            builder: (context) => Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.schedule,
+                        color: ColorConstants.primarywhite,
+                        size: 25,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Text(
+                        "Save to Watch later",
+                        style: TextStyle(fontSize: 17, color: Colors.white),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.bookmark_outline_sharp,
+                        color: ColorConstants.primarywhite,
+                        size: 25,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Text("Save to playlist",
+                          style: TextStyle(
+                              fontSize: 17, color: ColorConstants.primarywhite))
+                    ],
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.download_outlined,
+                          color: ColorConstants.primarywhite, size: 25),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Text("Download video",
+                          style: TextStyle(fontSize: 17, color: Colors.white))
+                    ],
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        CupertinoIcons.arrowshape_turn_up_right,
+                        color: ColorConstants.primarywhite,
+                        size: 25,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Text(
+                        "Share",
+                        style: TextStyle(fontSize: 17, color: Colors.white),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.not_interested,
+                        color: ColorConstants.primarywhite,
+                        size: 25,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Text(
+                        "Not interested",
+                        style: TextStyle(fontSize: 17, color: Colors.white),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.no_accounts_outlined,
+                        color: ColorConstants.primarywhite,
+                        size: 25,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Text(
+                        "Don't recommend channel",
+                        style: TextStyle(fontSize: 17, color: Colors.white),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.flag_outlined,
+                        color: ColorConstants.primarywhite,
+                        size: 25,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Text(
+                        "Report",
+                        style: TextStyle(fontSize: 17, color: Colors.white),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+        child: Icon(
+          Icons.more_vert,
+          color: ColorConstants.primarywhite,
+        ));
   }
 }

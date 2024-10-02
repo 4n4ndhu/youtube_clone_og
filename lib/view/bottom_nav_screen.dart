@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone_og/view/home_screen/home_screen.dart';
+import 'package:youtube_clone_og/view/profile_screen/profile_screen.dart';
 import 'package:youtube_clone_og/view/shorts_screen/shorts_screen.dart';
+import 'package:youtube_clone_og/view/subscription_screen/subscrption_screen.dart';
 import 'package:youtube_clone_og/view/utils/constants/color_constatns.dart';
 
 class BottomNavScreen extends StatefulWidget {
@@ -17,12 +19,8 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
     Container(
       color: Colors.blue,
     ),
-    Container(
-      color: Colors.green,
-    ),
-    Container(
-      color: Colors.orange,
-    ),
+    SubscriptionScreen(),
+    ProfileScreen()
   ];
   int selected = 0;
 
