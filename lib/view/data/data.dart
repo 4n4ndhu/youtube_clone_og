@@ -1,17 +1,47 @@
-List shorts = [
-  "https://images.pexels.com/photos/27954882/pexels-photo-27954882/free-photo-of-a-woman-in-a-white-dress-and-hat-standing-by-a-door.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-  "https://images.pexels.com/photos/27847672/pexels-photo-27847672/free-photo-of-black-and-white-photo-of-birds-flying-over-a-bridge.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-  "https://images.pexels.com/photos/27869366/pexels-photo-27869366/free-photo-of-denis.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-  "https://images.pexels.com/photos/26726444/pexels-photo-26726444/free-photo-of-heron-in-a-lake.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-  "",
-];
-
-List shortscaption = [
-  "It is never too late to be what you might have been",
-  "The only way to do great work is to love what you do",
-  "The only thing we have to fear is fear itself",
-  "You miss 100% of the shots you don’t take",
-];
+class shortsData {
+  static List shortsviewdata = [
+    {
+      "name": '@John',
+      "dpUrl":
+          'https://images.pexels.com/photos/4485199/pexels-photo-4485199.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+      "bgUrl":
+          "https://images.pexels.com/photos/27954882/pexels-photo-27954882/free-photo-of-a-woman-in-a-white-dress-and-hat-standing-by-a-door.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      "audioUrl":
+          'https://images.pexels.com/photos/4485199/pexels-photo-4485199.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+      "caption": "It is never too late to be what you might have been",
+    },
+    {
+      "name": '@Nelson',
+      "dpUrl":
+          'https://images.pexels.com/photos/4485199/pexels-photo-4485199.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+      "bgUrl":
+          "https://images.pexels.com/photos/27847672/pexels-photo-27847672/free-photo-of-black-and-white-photo-of-birds-flying-over-a-bridge.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      "audioUrl":
+          'https://images.pexels.com/photos/4485199/pexels-photo-4485199.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+      "caption": "The only way to do great work is to love what you do",
+    },
+    {
+      "name": '@Erick',
+      "dpUrl":
+          'https://images.pexels.com/photos/4485199/pexels-photo-4485199.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+      "bgUrl":
+          "https://images.pexels.com/photos/27869366/pexels-photo-27869366/free-photo-of-denis.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      "audioUrl":
+          'https://images.pexels.com/photos/4485199/pexels-photo-4485199.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+      "caption": "The only thing we have to fear is fear itself",
+    },
+    {
+      "name": '@Shawn',
+      "dpUrl":
+          'https://images.pexels.com/photos/4485199/pexels-photo-4485199.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+      "bgUrl":
+          "https://images.pexels.com/photos/26726444/pexels-photo-26726444/free-photo-of-heron-in-a-lake.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      "audioUrl":
+          'https://images.pexels.com/photos/4485199/pexels-photo-4485199.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+      "caption": "You miss 100% of the shots you don’t take",
+    },
+  ];
+}
 
 class AllCardData {
   static List allvideocarddata = [
