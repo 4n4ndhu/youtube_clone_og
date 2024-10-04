@@ -16,6 +16,9 @@ class historyCardWidget extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/images/minecraft thumb.jpg"),
+                  fit: BoxFit.cover),
               color: ColorConstants.primarywhite,
               borderRadius: BorderRadius.circular(15),
             ),
@@ -29,7 +32,7 @@ class historyCardWidget extends StatelessWidget {
               SizedBox(
                 width: 133,
                 child: Text(
-                  "datd fdsds vdfdfdsdvfnv dfjnbfbgf nbgf ndfsvdsa",
+                  "Minecraft Trails & Tales Update: Official Launch Trailer",
                   style: TextStyle(
                       color: ColorConstants.primarywhite, fontSize: 16),
                   maxLines: 2,

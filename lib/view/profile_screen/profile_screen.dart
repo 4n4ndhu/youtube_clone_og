@@ -389,7 +389,7 @@ class ProfileScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                "CyberOp",
+                "Anandhu",
                 style: TextStyle(
                     color: ColorConstants.primarywhite,
                     fontWeight: FontWeight.bold,

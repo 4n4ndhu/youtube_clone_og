@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_clone_og/view/utils/constants/color_constatns.dart';
 
-class videoCardWidget extends StatelessWidget {
+class videoCardWidget extends StatefulWidget {
   String thumbnail = "";
   String dpUrl = "";
   String channelname = "";
@@ -23,65 +23,103 @@ class videoCardWidget extends StatelessWidget {
   });
 
   @override
+  State<videoCardWidget> createState() => _videoCardWidgetState();
+}
+
+class _videoCardWidgetState extends State<videoCardWidget> {
+  bool _isVisible = true;
+
+  void _toggleVisibility() {
+    setState(() {
+      _isVisible = false;
+    });
+  }
+
+  void _undo() {
+    setState(() {
+      _isVisible = true;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onCardTaped,
-      child: Column(
-        children: [
-          Stack(
-            children: [
-              Container(
-                child: Image.asset(
-                  thumbnail,
-                  fit: BoxFit.cover,
-                ),
-                height: 200,
-                width: double.infinity,
-              ),
-              Positioned(
-                right: 10,
-                bottom: 10,
-                child: Container(
-                  child: Center(
-                      child: Text(
-                    duration,
-                    style: TextStyle(color: Colors.white),
-                  )),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: ColorConstants.primaryblack.withOpacity(.7),
-                  ),
-                  height: 26,
-                  width: 42,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          ListTile(
-            titleAlignment: ListTileTitleAlignment.top,
-            leading: CircleAvatar(
-              backgroundImage: AssetImage(dpUrl),
-            ),
-            title: Text(
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              caption,
-              style: TextStyle(color: Colors.white),
-            ),
-            subtitle: Wrap(
+    return Column(
+      children: [
+        if (_isVisible)
+          InkWell(
+            onTap: widget.onCardTaped,
+            child: Stack(
               children: [
-                Text(channelname,
-                    style: TextStyle(color: ColorConstants.lightwhite)),
-                Text(views, style: TextStyle(color: ColorConstants.lightwhite))
+                Container(
+                  child: Image.asset(
+                    widget.thumbnail,
+                    fit: BoxFit.cover,
+                  ),
+                  height: 200,
+                  width: double.infinity,
+                ),
+                Positioned(
+                  right: 10,
+                  bottom: 10,
+                  child: Container(
+                    child: Center(
+                        child: Text(
+                      widget.duration,
+                      style: TextStyle(color: Colors.white),
+                    )),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: ColorConstants.primaryblack.withOpacity(.7),
+                    ),
+                    height: 26,
+                    width: 42,
+                  ),
+                ),
               ],
             ),
-            trailing: _buildBottomSheetSection(context),
           ),
-        ],
-      ),
+        SizedBox(
+          height: 10,
+        ),
+        if (_isVisible)
+          InkWell(
+            onTap: widget.onCardTaped,
+            child: ListTile(
+              titleAlignment: ListTileTitleAlignment.top,
+              leading: CircleAvatar(
+                backgroundImage: AssetImage(widget.dpUrl),
+              ),
+              title: Text(
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                widget.caption,
+                style: TextStyle(color: Colors.white),
+              ),
+              subtitle: Wrap(
+                children: [
+                  Text(widget.channelname,
+                      style: TextStyle(color: ColorConstants.lightwhite)),
+                  Text(widget.views,
+                      style: TextStyle(color: ColorConstants.lightwhite))
+                ],
+              ),
+              trailing: _buildBottomSheetSection(context),
+            ),
+          ),
+        if (!_isVisible)
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text(
+                "video removed",
+                style: TextStyle(color: Colors.blue),
+              ),
+              TextButton(
+                  onPressed: _undo,
+                  child: Text("undo", style: TextStyle(color: Colors.blue))),
+            ],
+          )
+      ],
     );
   }
 
@@ -180,9 +218,15 @@ class videoCardWidget extends StatelessWidget {
                       SizedBox(
                         width: 30,
                       ),
-                      Text(
-                        "Not interested",
-                        style: TextStyle(fontSize: 17, color: Colors.white),
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          _toggleVisibility();
+                        },
+                        child: Text(
+                          "Not interested",
+                          style: TextStyle(fontSize: 17, color: Colors.white),
+                        ),
                       )
                     ],
                   ),
